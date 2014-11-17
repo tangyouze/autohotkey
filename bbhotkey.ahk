@@ -107,8 +107,8 @@ NumpadPgUp::Run mspaint.exe
 ; !j::{tab}
 ; !k::^+{tab}
 
-+Wheeldown::send ^{tab}
-+Wheelup::send ^+{tab}
+;+Wheeldown::send ^{tab}
+;+Wheelup::send ^+{tab}
 
 ;<!Wheeldown::alttab
 ;<!Wheelup::shiftalttab
@@ -117,6 +117,30 @@ NumpadPgUp::Run mspaint.exe
 ; for sublime work better. much like work now
 ; change close to close workspace first
 ; so it can easily save project open files.
+
+:*:bb[d]::  ; This hotstring replaces "]d" with the current date and time via the commands below.
+FormatTime, CurrentDateTime,, yyyy.MM.dd HH:mm   ; It will look like 9/1/2005 3:53 PM
+SendInput %CurrentDateTime%
+return
+
+
+:*:bba1::N4-B3C-14, SCE, NTU
+:*:bba2::50 Nanyang Avenue
+:*:bba3::639798
+
+:*:bba4::#13-74 Blk 757
+:*:bba5::Jurong West Street 74
+:*:bba6::640757
+
+:*:bbp1::83165280
+
+
+
+
+#include twelvesplit.ahk
+
+
+
 #IfWinActive, ahk_class PX_WINDOW_CLASS
 {
     !F4::send ^+w
@@ -141,26 +165,3 @@ NumpadPgUp::Run mspaint.exe
     !8::send ^{8}
     !9::send ^{9}
 }
-
-:*:bb[d]::  ; This hotstring replaces "]d" with the current date and time via the commands below.
-FormatTime, CurrentDateTime,, yyyy.MM.dd HH:mm   ; It will look like 9/1/2005 3:53 PM
-SendInput %CurrentDateTime%
-return
-
-
-:*:bba1::N4-B3C-14, SCE, NTU
-:*:bba2::50 Nanyang Avenue
-:*:bba3::639798
-
-:*:bba4::#13-74 Blk 757
-:*:bba5::Jurong West Street 74
-:*:bba6::640757
-
-:*:bbp1::83165280
-
-
-
-
-#include twelvesplit.ahk
-
-
